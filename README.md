@@ -26,7 +26,7 @@
 
 ### Tecnologías
 
-> Express, Node, JWT, Mongoose
+> Express, Node, JWT, Mongoose, Render
 
 ### Autenticación
 
