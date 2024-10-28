@@ -37,10 +37,10 @@ export const loginEmployee = async (req, res) => {
 
     const token = jwt.sign(
       { _id: employee._id, email: employee.email, name: employee.name },
-      SECRET_KEY,
-      {
-        expiresIn: 86400,
-      }
+      SECRET_KEY
+      // {
+      //   expiresIn: "1d",
+      // }
     );
     return res.json({
       token,
