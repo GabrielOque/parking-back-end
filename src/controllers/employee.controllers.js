@@ -17,6 +17,7 @@ export const createEmployee = async (req, res) => {
     const EmployeeSaved = await newEmployee.save();
     return res.send(EmployeeSaved);
   } catch (error) {
+    console.log(error);
     res.status(400).json({ message: error.message });
   }
 };
@@ -51,6 +52,7 @@ export const loginEmployee = async (req, res) => {
       },
     });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ message: "A ocurrido un error inesperado" });
   }
 };

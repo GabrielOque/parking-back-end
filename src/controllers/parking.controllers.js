@@ -53,6 +53,7 @@ export const closeRegister = async (req, res) => {
     const parkingUpdated = await parking.save();
     return res.json(parkingUpdated);
   } catch (error) {
+    console.log(error);
     return res.status(400).json({ message: "A ocurrido un error inesperado" });
   }
 };
