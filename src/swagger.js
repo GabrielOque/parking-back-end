@@ -35,9 +35,7 @@ const swaggerOptions = {
                   schema: {
                     type: "object",
                     properties: {
-                      employee: {
-                        type: "object",
-                      },
+                      employee: { type: "object" },
                     },
                   },
                 },
@@ -46,8 +44,6 @@ const swaggerOptions = {
             401: { description: "Acceso no autorizado" },
           },
         },
-      },
-      "/api/employee": {
         post: {
           summary: "Crear un nuevo empleado",
           description: "Registra un nuevo empleado en la base de datos.",
@@ -62,12 +58,27 @@ const swaggerOptions = {
                     email: { type: "string" },
                     password: { type: "string" },
                   },
+                  required: ["name", "email", "password"],
                 },
               },
             },
           },
           responses: {
-            200: { description: "Empleado creado exitosamente" },
+            201: {
+              description: "Empleado creado exitosamente",
+              content: {
+                "application/json": {
+                  schema: {
+                    type: "object",
+                    properties: {
+                      id: { type: "string" },
+                      name: { type: "string" },
+                      email: { type: "string" },
+                    },
+                  },
+                },
+              },
+            },
             400: { description: "Error en la solicitud" },
           },
         },
@@ -120,7 +131,6 @@ const swaggerOptions = {
           },
         },
       },
-
       "/api/parking/register": {
         post: {
           summary: "Registrar nuevo vehículo",
@@ -157,7 +167,6 @@ const swaggerOptions = {
           },
         },
       },
-
       "/api/parking/close/{id}": {
         put: {
           summary: "Cerrar registro de estacionamiento",
@@ -168,10 +177,10 @@ const swaggerOptions = {
             {
               in: "path",
               name: "id",
+              required: true,
               schema: {
                 type: "string",
               },
-              required: true,
             },
           ],
           responses: {
