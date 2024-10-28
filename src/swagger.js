@@ -120,6 +120,7 @@ const swaggerOptions = {
           },
         },
       },
+
       "/api/parking/register": {
         post: {
           summary: "Registrar nuevo vehículo",
