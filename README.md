@@ -38,6 +38,7 @@ La aplicación utiliza autenticación basada en tokens. Si el usuario no está a
    http://localhost:4000/api/employee/ (post) esto en loccal para hacerlo en produccion use un cliente rest y ejecute el dominio https://\*\*.com/api/employee
 1. **Iniciar sesión**: Utilice las credenciales proporcionadas (email: `employee1@gmail.com`, password: `1234`) para iniciar sesión en la plataforma.
 2. **Iniciar sesión**: La api tiene tosos sus endpoints protegidos
+3. **Documentación**: para acceder a la documentacion desde local: http://localhost:4000/api-docs-back/ desde el servidor desplegado: https://parking-back-end-vvxn.onrender.com/api-docs-back/
 
 ### Problemas comunes
 
