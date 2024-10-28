@@ -22,7 +22,7 @@ const swaggerOptions = {
     },
     security: [{ bearerAuth: [] }],
     paths: {
-      "/employees": {
+      "/api/employees": {
         get: {
           summary: "Obtener detalles del empleado",
           description: "Retorna la información del empleado autenticado.",
@@ -47,7 +47,7 @@ const swaggerOptions = {
           },
         },
       },
-      "/employees/register": {
+      "/api/employees/register": {
         post: {
           summary: "Crear un nuevo empleado",
           description: "Registra un nuevo empleado en la base de datos.",
@@ -72,7 +72,7 @@ const swaggerOptions = {
           },
         },
       },
-      "/employees/login": {
+      "/api/employees/login": {
         post: {
           summary: "Iniciar sesión de empleado",
           description:
@@ -98,7 +98,7 @@ const swaggerOptions = {
           },
         },
       },
-      "/parkings": {
+      "/api/parkings": {
         get: {
           summary: "Obtener registros de estacionamiento",
           description:
@@ -147,7 +147,7 @@ const swaggerOptions = {
           },
         },
       },
-      "/parkings/{id}": {
+      "/api/parkings/{id}": {
         put: {
           summary: "Cerrar registro de estacionamiento",
           description:
