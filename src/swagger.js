@@ -22,7 +22,7 @@ const swaggerOptions = {
     },
     security: [{ bearerAuth: [] }],
     paths: {
-      "/api/employees": {
+      "/api/employee": {
         get: {
           summary: "Obtener detalles del empleado",
           description: "Retorna la información del empleado autenticado.",
@@ -47,7 +47,7 @@ const swaggerOptions = {
           },
         },
       },
-      "/api/employees/register": {
+      "/api/employee": {
         post: {
           summary: "Crear un nuevo empleado",
           description: "Registra un nuevo empleado en la base de datos.",
@@ -72,7 +72,7 @@ const swaggerOptions = {
           },
         },
       },
-      "/api/employees/login": {
+      "/api/employee/login": {
         post: {
           summary: "Iniciar sesión de empleado",
           description:
@@ -98,7 +98,7 @@ const swaggerOptions = {
           },
         },
       },
-      "/api/parkings": {
+      "/api/parking/all": {
         get: {
           summary: "Obtener registros de estacionamiento",
           description:
@@ -119,6 +119,8 @@ const swaggerOptions = {
             400: { description: "Error en la solicitud" },
           },
         },
+      },
+      "/api/parking/register": {
         post: {
           summary: "Registrar nuevo vehículo",
           description: "Crea un nuevo registro de estacionamiento.",
@@ -137,6 +139,13 @@ const swaggerOptions = {
                     owner: { type: "string" },
                     documentNumber: { type: "string" },
                   },
+                  required: [
+                    "plate",
+                    "checkIn",
+                    "nameVehicle",
+                    "owner",
+                    "documentNumber",
+                  ],
                 },
               },
             },
@@ -147,7 +156,8 @@ const swaggerOptions = {
           },
         },
       },
-      "/api/parkings/{id}": {
+
+      "/api/parking/close/{id}": {
         put: {
           summary: "Cerrar registro de estacionamiento",
           description:
